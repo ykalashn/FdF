@@ -12,7 +12,8 @@
 
 NAME = fdf
 
-SRCS = srcs/ft_draw_line.c 
+SRCS = srcs/ft_draw_line.c \
+		srcs/main.c \
 
 
 FLAGS = -Wall -Werror -Wextra -I/.includes
