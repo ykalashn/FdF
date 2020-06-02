@@ -1,7 +1,0 @@
-NAME = fdf
-
-all: $(NAME)
-
-$(NAME):		
-	gcc main.c ./libft/libft.a line.c fdf.h -L /usr/local/lib -I /usr/local/include -lmlx -framework OpenGL -framework Appkit
-	
