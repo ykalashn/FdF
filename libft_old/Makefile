@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ykalashn <ykalashn@student.42.fr>          +#+  +:+       +#+         #
+#    By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/10/16 15:44:24 by kpesonen          #+#    #+#              #
-#    Updated: 2020/03/22 18:57:16 by ykalashn         ###   ########.fr        #
+#    Created: 2020/06/02 10:08:03 by ykalashn          #+#    #+#              #
+#    Updated: 2020/06/02 10:08:10 by ykalashn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
