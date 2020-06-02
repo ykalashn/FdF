@@ -5,24 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/22 12:29:30 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/10/27 12:26:22 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:18:56 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:18:58 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	size_t			i;
-	unsigned char	*str;
+	unsigned char	*ptr;
 
-	i = 0;
-	str = b;
-	while (i != len)
+	ptr = (unsigned char*)b;
+	while (len > 0)
 	{
-		str[i] = (unsigned char)c;
-		i++;
+		*ptr = (unsigned char)c;
+		ptr++;
+		len--;
 	}
 	return (b);
 }

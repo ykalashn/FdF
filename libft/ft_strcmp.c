@@ -5,24 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/23 14:49:13 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/10/25 10:57:28 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:23:38 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:23:40 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(const char *s1, const char *s2)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	unsigned char	*str1;
-	unsigned char	*str2;
-	int				i;
+	int	i;
 
-	str1 = (unsigned char*)s1;
-	str2 = (unsigned char*)s2;
 	i = 0;
-	while (str1[i] == str2[i] && str1[i] != '\0' && str2[i] != '\0')
+	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
 		i++;
-	if (str1[i] > str2[i] || str2[i] > str1[i])
-		return (str1[i] - str2[i]);
-	else
-		return (0);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

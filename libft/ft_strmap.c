@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/05 12:57:53 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/11/12 11:32:00 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:28:12 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:28:15 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,17 @@
 char	*ft_strmap(char const *s, char (*f)(char))
 {
 	char	*fresh;
-	char	*ptr1;
-	char	*ptr2;
+	int		i;
 
-	if (!(fresh = ft_memalloc((size_t)ft_strlen((char*)s) + 1)))
+	i = 0;
+	if (!s || !f)
 		return (NULL);
-	ptr1 = (char*)s;
-	ptr2 = fresh;
-	while (*ptr1)
+	if (!(fresh = ft_strnew(ft_strlen(s))))
+		return (NULL);
+	while (s[i])
 	{
-		*(ptr2++) = f(*(ptr1++));
+		fresh[i] = f(s[i]);
+		i++;
 	}
 	return (fresh);
 }

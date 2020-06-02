@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/05 15:52:00 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/11/13 14:43:41 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:31:42 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:31:45 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,21 @@
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
+	char	*sub;
 	size_t	i;
-	char	*fresh;
+	size_t	j;
 
-	i = 0;
-	if (!(fresh = (char *)malloc(sizeof(*fresh) * len + 1)))
+	if (!s)
 		return (NULL);
-	while (i < len)
+	i = (size_t)start;
+	j = 0;
+	if (!(sub = ft_strnew(len)))
+		return (NULL);
+	while (len-- > 0)
 	{
-		fresh[i] = s[start];
-		start++;
+		sub[j] = s[i];
 		i++;
+		j++;
 	}
-	fresh[i] = '\0';
-	return (fresh);
+	return (sub);
 }

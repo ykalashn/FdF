@@ -5,17 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/30 23:35:03 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/10/30 23:37:41 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:32:17 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:32:22 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int		ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		return (c + 32);
-	else
-		return (c);
+	return (c);
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/27 14:37:13 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/10/27 16:25:47 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:28:47 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:28:49 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,18 @@
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	j = 0;
 	while (s1[i] != '\0')
 		i++;
-	while (j < n && s2[j] != '\0')
+	j = 0;
+	while (s2[j] != '\0' && j < n)
 	{
-		s1[i] = s2[j];
-		i++;
+		s1[i + j] = s2[j];
 		j++;
 	}
-	s1[i] = '\0';
+	s1[i + j] = '\0';
 	return (s1);
 }

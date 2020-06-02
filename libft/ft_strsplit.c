@@ -5,79 +5,73 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/09 20:19:23 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/11/13 13:09:50 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:31:07 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:31:09 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_wordc(char const *s, char c)
+static int	ft_cw(char const *s, char c)
 {
-	int count;
+	int	words;
 
-	count = 0;
+	words = 0;
+	if (*s != c && *s)
+	{
+		words++;
+		s++;
+	}
 	while (*s)
 	{
-		while (*s && *s == c)
+		while (*s == c)
+		{
 			s++;
-		if (*s && *s != c)
-			count++;
-		while (*s && *s != c)
-			s++;
+			if (*s != c && *s)
+				words++;
+		}
+		s++;
 	}
-	return (count);
+	return (words);
 }
 
-static int		ft_ccount(char const *s, char c, unsigned int start)
+static int	ft_cl(char const *s, char c)
 {
-	int count;
+	int	count;
 
 	count = 0;
-	while (s[start] && s[start] == c)
+	while (*s && *s != c)
 	{
 		count++;
-		start++;
+		s++;
 	}
 	return (count);
 }
 
-static char		*ft_mkword(char const *s, char c, unsigned int n, size_t len)
+char		**ft_strsplit(char const *s, char c)
 {
-	unsigned int i;
-
-	if (s[n] == '\0')
-		return (0);
-	i = n;
-	while (s[i] && s[i] != c)
-	{
-		i++;
-		len++;
-	}
-	return (ft_strsub(s, n, len));
-}
-
-char			**ft_strsplit(char const *s, char c)
-{
-	char			**ptr;
-	unsigned int	start;
-	size_t			len;
-	int				i;
+	char	**arr;
+	int		i;
+	int		j;
 
 	i = 0;
-	start = 0;
-	len = 0;
-	if (!(ptr = (char **)malloc(sizeof(char *) * (ft_wordc(s, c) + 1))))
+	if (!s || !(arr = (char**)malloc(sizeof(char*) * (ft_cw(s, c) + 1))))
 		return (NULL);
-	while (s[start])
+	while (*s)
 	{
-		start += ft_ccount(s, c, start);
-		ptr[i] = ft_mkword(s, c, start, len);
-		if (i < ft_wordc(s, c))
-			start += ft_strlen(ptr[i]);
-		if (ptr[i])
+		while (*s == c && *s)
+			s++;
+		if (*s != c && *s)
+		{
+			j = 0;
+			if (!(arr[i] = (char*)malloc(sizeof(char) * (ft_cl(s, c) + 1))))
+				return (NULL);
+			while (*s != c && *s)
+				arr[i][j++] = (char)*s++;
+			arr[i][j] = '\0';
 			i++;
+		}
 	}
-	ptr[i] = NULL;
-	return (ptr);
+	arr[i] = NULL;
+	return (arr);
 }

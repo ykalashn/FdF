@@ -5,14 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/30 23:15:47 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/10/30 23:26:43 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:11:32 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:11:46 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int		ft_isprint(int c)
+int	ft_isprint(int c)
 {
-	return (c >= 32 && c <= 126);
+	if (c >= 040 && c <= 0176)
+		return (1);
+	else
+		return (0);
 }

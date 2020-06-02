@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/07 10:27:37 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/11/13 14:52:37 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:31:59 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:32:02 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,19 @@
 
 char	*ft_strtrim(char const *s)
 {
-	char			*fresh;
-	size_t			len;
-	unsigned int	i;
+	size_t	len;
+	size_t	start;
 
-	i = 0;
-	len = ft_strlen(s);
-	while (s[i] && s[i + 1])
-		i++;
-	while (i > 0 && (s[i] == ' ' || s[i] == '\n' || s[i] == '\t'))
-	{
-		len--;
-		i--;
-	}
-	i = 0;
-	while (len > 0 && s[i] && (s[i] == ' ' || s[i] == '\n' || s[i] == '\t'))
-	{
-		i++;
-		len--;
-	}
-	if (!(fresh = (char *)malloc(sizeof(*fresh) * len + 1)))
+	if (!s)
 		return (NULL);
-	fresh = ft_strsub(s, i, len);
-	return (fresh);
+	start = 0;
+	while (s[start] != '\0' &&
+	(s[start] == ' ' || s[start] == '\n' || s[start] == '\t'))
+		start++;
+	if (s[start] == '\0')
+		return (ft_strdup(s + start));
+	len = ft_strlen(s) - 1;
+	while (len > 0 && (s[len] == ' ' || s[len] == '\n' || s[len] == '\t'))
+		len--;
+	return (ft_strsub(s, start, len - start + 1));
 }

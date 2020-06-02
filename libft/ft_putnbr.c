@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/10 17:01:15 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/11/11 14:53:51 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:20:52 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:20:55 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,23 @@
 
 void	ft_putnbr(int n)
 {
-	ft_putnbr_fd(n, 1);
+	if (n == -2147483648)
+	{
+		ft_putchar('-');
+		ft_putnbr(2);
+		ft_putnbr(147483648);
+		return ;
+	}
+	else if (n < 0)
+	{
+		ft_putchar('-');
+		ft_putnbr(-n);
+	}
+	else if (n > 9)
+	{
+		ft_putnbr(n / 10);
+		ft_putnbr(n % 10);
+	}
+	else if (n <= 9)
+		ft_putchar(n + '0');
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/27 16:34:03 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/10/28 16:28:24 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:27:03 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:27:07 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,25 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t sum;
-	size_t i;
-	size_t j;
+	size_t	dlen;
+	size_t	slen;
+	size_t	i;
 
-	sum = 0;
+	dlen = ft_strlen(dst);
+	slen = ft_strlen(src);
 	i = 0;
-	j = 0;
-	while (dst[i])
-		i++;
-	while (src[sum])
-		sum++;
-	if (dstsize <= i)
-		sum = sum + dstsize;
+	if (dstsize == 0)
+		return (slen);
+	if (dstsize < dlen)
+		slen += dstsize;
 	else
-		sum = sum + i;
-	while (src[j] && i + 1 < dstsize)
+		slen += dlen;
+	while (src[i] != '\0' && dlen < (dstsize - 1) && dst != src)
 	{
-		dst[i] = src[j];
+		dst[dlen] = src[i];
+		dlen++;
 		i++;
-		j++;
 	}
-	dst[i] = '\0';
-	return (sum);
+	dst[dlen] = '\0';
+	return (slen);
 }

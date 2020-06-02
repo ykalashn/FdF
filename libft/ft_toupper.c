@@ -5,17 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/30 23:29:03 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/10/30 23:33:38 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:32:35 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:32:39 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int		ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		return (c - 32);
-	else
-		return (c);
+	return (c);
 }

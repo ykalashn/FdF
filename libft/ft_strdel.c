@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/02 21:16:36 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/11/12 11:11:08 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:24:09 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:24:13 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,9 @@
 
 void	ft_strdel(char **as)
 {
-	ft_memdel((void**)as);
+	if (as && *as)
+	{
+		free(*as);
+		*as = NULL;
+	}
 }

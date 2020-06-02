@@ -5,15 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/30 22:59:30 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/10/30 23:06:40 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:09:48 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:09:53 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
-	return ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || \
-			(c >= 'a' && c <= 'z'));
+	if (ft_isalpha(c) == 1)
+		return (1);
+	else if (ft_isdigit(c) == 1)
+		return (1);
+	else
+		return (0);
 }

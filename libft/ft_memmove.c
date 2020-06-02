@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/25 18:27:37 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/11/13 16:13:28 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:18:39 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:18:42 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,24 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char *s1;
-	char *s2;
+	unsigned char	*d;
+	unsigned char	*s;
 
-	if (len == 0 || dst == src)
+	d = (unsigned char*)dst;
+	s = (unsigned char*)src;
+	if (!d && !s)
 		return (dst);
-	s1 = (char*)dst;
-	s2 = (char*)src;
-	if (s1 > s2)
+	if (d < s)
 	{
-		while (len-- > 0)
-			*(s1 + len) = *(s2 + len);
+		while (len--)
+			*d++ = *s++;
 	}
 	else
 	{
-		while (len-- > 0)
-			*s1++ = *s2++;
+		d += len - 1;
+		s += len - 1;
+		while (len--)
+			*d-- = *s--;
 	}
 	return (dst);
 }

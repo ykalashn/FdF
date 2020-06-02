@@ -5,15 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/02 21:58:39 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/11/12 11:14:37 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:23:20 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:23:23 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 void	ft_strclr(char *s)
 {
-	while (s && *s)
-		*(s++) = '\0';
+	if (s)
+	{
+		while (*s)
+		{
+			*s = '\0';
+			s++;
+		}
+	}
 }

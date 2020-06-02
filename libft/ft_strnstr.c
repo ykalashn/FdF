@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/30 10:41:44 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/11/12 11:03:08 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:30:28 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:30:30 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,23 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t i;
-	size_t j;
+	char	*res;
+	size_t	i;
+	size_t	j;
 
+	if (*needle == '\0')
+		return (res = (char*)haystack);
 	i = 0;
-	if (!*needle)
-		return ((char*)haystack);
-	while (haystack[i] && i < len)
+	while (haystack[i] != '\0' && i < len)
 	{
 		if (haystack[i] == needle[0])
 		{
-			j = 1;
-			while (needle[j] && haystack[i + j] == needle[j] && i + j < len)
+			j = 0;
+			while (haystack[i + j] == needle[j] && needle[j] != '\0' &&
+			(i + j) < len)
 				j++;
 			if (needle[j] == '\0')
-				return ((char*)&haystack[i]);
+				return (res = (char*)&haystack[i]);
 		}
 		i++;
 	}

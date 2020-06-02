@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/25 14:36:32 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/10/27 12:18:56 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:17:08 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:17:15 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	char		*s1;
-	const char	*s2;
+	unsigned char	*d;
+	unsigned char	*s;
+	size_t			i;
 
-	s1 = dst;
-	s2 = src;
-	while (n > 0)
+	d = (unsigned char*)dst;
+	s = (unsigned char*)src;
+	i = 0;
+	while (n-- > 0)
 	{
-		*s1 = *s2;
-		s1++;
-		if (*s2 == (char)c)
-			return (s1);
-		s2++;
-		n--;
+		d[i] = s[i];
+		if (s[i] == (unsigned char)c)
+			return (dst + (i + 1));
+		i++;
 	}
 	return (NULL);
 }

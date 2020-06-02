@@ -5,14 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/30 23:08:05 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/10/30 23:13:36 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:10:57 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:10:59 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int		ft_isascii(int c)
+int	ft_isascii(int c)
 {
-	return (c >= 0 && c <= 127);
+	if (c >= 0 && c <= 127)
+		return (1);
+	else
+		return (0);
 }

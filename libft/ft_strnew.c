@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/01 16:41:15 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/11/12 11:09:46 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:30:05 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:30:10 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,10 @@
 
 char	*ft_strnew(size_t size)
 {
-	char	*str;
-	size_t	i;
+	char	*fresh;
 
-	i = 0;
-	if (!(str = ft_memalloc(size + 1)))
+	if (!(fresh = (char*)malloc(size + 1)))
 		return (NULL);
-	while (i < size)
-		str[i++] = '\0';
-	return (str);
+	ft_memset(fresh, '\0', size + 1);
+	return (fresh);
 }

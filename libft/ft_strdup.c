@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/26 14:17:19 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/11/13 16:47:10 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:25:13 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:25:17 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,20 @@
 
 char	*ft_strdup(const char *s1)
 {
-	char	*ptr;
-	int		i;
+	size_t	i;
+	char	*dup;
 
-	if (!(ptr = (char*)malloc(sizeof(*ptr) * ft_strlen(s1) + 1)))
+	i = 0;
+	while (s1[i] != '\0')
+		i++;
+	if (!(dup = ft_strnew(i)))
 		return (NULL);
 	i = 0;
-	if (!ptr)
-		return (NULL);
-	while (s1[i])
+	while (s1[i] != '\0')
 	{
-		ptr[i] = s1[i];
+		dup[i] = s1[i];
 		i++;
 	}
-	ptr[i] = '\0';
-	return (ptr);
+	dup[i] = '\0';
+	return (dup);
 }

@@ -5,14 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/30 21:59:55 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/10/30 22:29:28 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:10:24 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:10:40 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int		ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
-	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
+	if (c >= 'A' && c <= 'Z')
+		return (1);
+	else if (c >= 'a' && c <= 'z')
+		return (1);
+	else
+		return (0);
 }

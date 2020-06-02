@@ -5,14 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/30 22:53:18 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/10/30 22:57:15 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:11:16 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:11:20 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int		ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-	return (c >= '0' && c <= '9');
+	if (c >= '0' && c <= '9')
+		return (1);
+	else
+		return (0);
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/28 17:25:28 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/10/29 18:04:17 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:22:51 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:22:54 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int i;
-
-	i = 0;
-	while (*s != (char)c)
-		if (!*s++)
-			return (NULL);
-	return ((char *)s);
+	while (*s)
+	{
+		if (*s == (char)c)
+			return ((char*)s);
+		s++;
+	}
+	if (*s == '\0' && (char)c == '\0')
+		return ((char*)s);
+	else
+		return (NULL);
 }

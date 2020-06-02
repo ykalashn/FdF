@@ -5,21 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/02 23:23:38 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/11/12 11:17:28 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:26:22 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:26:25 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
-	while (s[i] && s && f)
+	if (s && f)
 	{
-		f(i, &s[i]);
-		i++;
+		while (s[i])
+		{
+			f(i, &s[i]);
+			i++;
+		}
 	}
 }

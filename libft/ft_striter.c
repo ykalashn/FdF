@@ -5,15 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/02 23:13:07 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/11/12 11:16:24 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:25:53 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:25:58 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 void	ft_striter(char *s, void (*f)(char *))
 {
-	while (*s && s && f)
-		f(s++);
+	if (s && f)
+	{
+		while (*s)
+		{
+			f(s);
+			s++;
+		}
+	}
 }

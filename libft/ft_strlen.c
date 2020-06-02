@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/21 12:19:13 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/11/13 16:28:56 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:27:52 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:27:58 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
-	while (s[i])
+	while (s[i] != '\0')
 		i++;
 	return (i);
 }

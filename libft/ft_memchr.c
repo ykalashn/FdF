@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/25 19:44:56 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/10/26 12:08:40 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:17:28 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:17:33 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,17 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char	*ptr;
-	int				i;
+	unsigned char	*p;
 
-	ptr = (unsigned char*)s;
-	i = 0;
-	while (n--)
+	p = (unsigned char*)s;
+	if (n != 0)
 	{
-		if (ptr[i] == (unsigned char)c)
-			return (ptr + i);
-		i++;
+		while (n-- > 0)
+		{
+			if (*p == (unsigned char)c)
+				return (p);
+			p++;
+		}
 	}
 	return (NULL);
 }

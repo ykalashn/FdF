@@ -5,35 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/30 19:52:44 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/11/13 17:17:47 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:08:54 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:08:57 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(const char *c)
+int	ft_atoi(const char *str)
 {
-	int negpos;
-	int i;
-	int res;
+	int	num;
+	int	sign;
 
-	i = 0;
-	negpos = 1;
-	res = 0;
-	while (c[i] == ' ' || c[i] == '\t' || c[i] == '\n' || c[i] == '\v' || \
-			c[i] == '\f' || c[i] == '\r')
-		i++;
-	if (c[i] == 45 || c[i] == 43)
+	num = 0;
+	sign = 1;
+	while (*str == '\t' || *str == '\n' || *str == '\v' || *str == '\f' ||
+	*str == '\r' || *str == ' ')
+		str++;
+	if (*str == '-')
 	{
-		if (c[i] == 45)
-			negpos = -1;
-		i++;
+		sign = -1;
+		str++;
 	}
-	if (!(c[i] > 47 && c[i] < 58))
-		return (0);
-	while (c[i] && c[i] > 47 && c[i] < 58)
+	else if (*str == '+')
+		str++;
+	while (*str >= '0' && *str <= '9' && *str != '\0')
 	{
-		res = res * 10 + c[i] - 48;
-		i++;
+		num = (num * 10) + *str - '0';
+		str++;
 	}
-	return (negpos * res);
+	return (sign * num);
 }

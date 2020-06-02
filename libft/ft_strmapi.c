@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/05 14:51:00 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/11/12 11:33:15 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:28:32 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:28:34 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 
 	i = 0;
-	if (!(fresh = ft_memalloc((size_t)ft_strlen((char*)s) + 1)))
+	if (!s || !f)
+		return (NULL);
+	if (!(fresh = ft_strnew(ft_strlen(s))))
 		return (NULL);
 	while (s[i])
 	{

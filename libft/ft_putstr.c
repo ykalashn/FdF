@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/10 16:39:22 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/11/10 16:45:38 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:21:31 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:21:35 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	ft_putstr(char const *s)
 {
-	write(1, s, ft_strlen(s));
+	if (s)
+		write(1, s, ft_strlen(s));
 }

@@ -5,58 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/10 15:27:45 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/11/13 14:25:15 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:12:27 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:12:29 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_countint(int n)
+char	*ft_itoa(int n)
 {
-	int i;
-
-	i = 0;
-	if (n < 0)
-	{
-		n = -n;
-		i++;
-	}
-	while (n / 10)
-	{
-		n /= 10;
-		i++;
-	}
-	if (n < 10)
-		i++;
-	return (i);
-}
-
-char			*ft_itoa(int n)
-{
-	char	*buffer;
+	char	*str;
 	int		i;
-	int		size;
+	long	nbr;
 
-	i = 0;
-	size = ft_countint(n);
-	if (!(buffer = ft_strnew(size)))
+	nbr = (long)n;
+	i = ft_nbrlen(nbr);
+	if (!(str = (char*)malloc(sizeof(char) * (i + 1))))
 		return (NULL);
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	buffer[0] = 48;
-	if (n < 0)
+	str[i--] = '\0';
+	if (nbr == 0)
+		str[0] = '0';
+	if (nbr < 0)
 	{
-		buffer[i] = '-';
-		n = -n;
+		str[0] = '-';
+		nbr = -nbr;
 	}
-	i = size - 1;
-	while (n > 0)
+	while (nbr > 0)
 	{
-		buffer[i] = n % 10 + 48;
-		n = n / 10;
-		if (i > 0)
-			i--;
+		str[i] = nbr % 10 + '0';
+		nbr /= 10;
+		i--;
 	}
-	return (buffer);
+	return (str);
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/23 17:15:52 by ykalashn          #+#    #+#             */
-/*   Updated: 2019/10/27 12:48:32 by ykalashn         ###   ########.fr       */
+/*   Created: 2020/06/02 10:09:17 by ykalashn          #+#    #+#             */
+/*   Updated: 2020/06/02 10:09:26 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t i;
-
-	i = 0;
-	while (i < n)
-	{
-		((char*)s)[i] = 0;
-		i++;
-	}
+	ft_memset(s, 0, n);
 }
