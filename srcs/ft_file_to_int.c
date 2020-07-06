@@ -6,7 +6,7 @@
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/06 12:41:54 by ykalashn          #+#    #+#             */
-/*   Updated: 2020/07/06 14:01:41 by ykalashn         ###   ########.fr       */
+/*   Updated: 2020/07/06 16:05:53 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int ft_file_to_int(int argc, char **argv)
 	int **array;
 	int *amt_of_lines;
 	char *line;
+	char **nbr_array;
 	
 	i = 0;
 	amt_of_lines = 0;
@@ -26,11 +27,17 @@ int ft_file_to_int(int argc, char **argv)
 		fd = 0;
 	else
 		fd = open(argv[1], O_RDONLY);
-	while (get_next_line(fd, &line))
+	while (get_next_line(fd, &line) > 0)
 	{
-		line++;
+		if (i = 0)
+		{
+			nbr_array = ft_strsplit(line, ' '); //saves each character(number) in
+											//its own string
+			num = sizeof(nbr_array) / sizeof(nbr_array[0]);
+		}
 		i++;
 	}
+	
 	while (get_next_line(fd, &line) > 0)
 	{
 		//array = ft_atoi(line);
@@ -42,4 +49,5 @@ int ft_file_to_int(int argc, char **argv)
 	free(line);
 	return (array);
 }
+
 
