@@ -6,14 +6,14 @@
 /*   By: ykalashn <ykalashn@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/02 10:33:17 by ykalashn          #+#    #+#             */
-/*   Updated: 2020/06/02 10:33:20 by ykalashn         ###   ########.fr       */
+/*   Updated: 2020/07/06 12:51:42 by ykalashn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# define MAX_FD 4864
-# define BUFF_SIZE 8
+# define CEILING 4864
+# define BUFF_SIZE 3
 
 # include "libft.h"
 
